@@ -1,27 +1,32 @@
 package com.company;
 
-import com.company.rotate_array.Second;
+import com.company.move_zeroes.First;
 
 import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] count1 = {11, 2, 3, 4, 5};
-        int[] count2 = {11, 2, 3, 4, 5};
-        int[] count3 = {11, 2, 3, 4, 5};
+        int[] arr = {1};
+        First first = new First();
+        first.solutions1(arr);
+        System.out.println(Arrays.toString(arr));
 
-        Second second = new Second();
-        second.solution1(count1, 2);
-        second.solution2(count2, 2);
-        second.solution3(count3, 2);
-
-//        ListNode l1 = new ListNode();
-//        ListNode l2 = new ListNode();
-//        ListNode cc = mergeTwoLists(l1, l2);
-        System.out.println(Arrays.toString(count1));
-        System.out.println(Arrays.toString(count2));
-        System.out.println(Arrays.toString(count3));
+//        int[] count1 = {11, 2, 3, 4, 5};
+//        int[] count2 = {11, 2, 3, 4, 5};
+//        int[] count3 = {11, 2, 3, 4, 5};
+//
+//        Second second = new Second();
+//        second.solution1(count1, 2);
+//        second.solution2(count2, 2);
+//        second.solution3(count3, 2);
+//
+////        ListNode l1 = new ListNode();
+////        ListNode l2 = new ListNode();
+////        ListNode cc = mergeTwoLists(l1, l2);
+//        System.out.println(Arrays.toString(count1));
+//        System.out.println(Arrays.toString(count2));
+//        System.out.println(Arrays.toString(count3));
 //        System.out.println(Arrays.toString(count));
     }
 
