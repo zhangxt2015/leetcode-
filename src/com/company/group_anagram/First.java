@@ -8,15 +8,15 @@ public class First {
     // 2 使用hash写入对应的数组
     public List<List<String>> solution1(String[] strs) {
         if (strs.length == 0) {
-            return new ArrayList();
+            return new ArrayList<>();
         }
-        Map<String, List<String>> map = new HashMap<String, List<String>>();
+        Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
             char[] str_arr = str.toCharArray();
             Arrays.sort(str_arr);
             String sorted_str = String.valueOf(str_arr);
             if (!map.containsKey(sorted_str)) {
-                map.put(sorted_str, new ArrayList());
+                map.put(sorted_str, new ArrayList<>());
             }
             map.get(sorted_str).add(str);
         }
@@ -33,6 +33,7 @@ public class First {
             char[] s_arr = s.toCharArray();
             for (char c : s_arr) arr[c - 'a']++;
             String sb_str = Arrays.toString(arr);
+
             if (!map.containsKey(sb_str)) map.put(sb_str, new ArrayList());
             map.get(sb_str).add(s);
         }
