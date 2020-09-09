@@ -1,5 +1,6 @@
 package com.company.binary_tree_preorder_traversal;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,43 +32,21 @@ public class First {
     // 将当前节点写入数组
     // 依次将右-左节点写入栈，因为是前序【根-左-右】，所以入栈顺序需要相反【右-左-根】
     public List<Integer> solution2(TreeNode root) {
-        LinkedList<TreeNode> stack = new LinkedList<>();
-        LinkedList<Integer> arr = new LinkedList<>();
-        if (root == null) {
-            return arr;
-        }
-        stack.add(root);
-        if (!stack.isEmpty()) {
-            TreeNode node = stack.pollLast();
-            arr.add(node.val);
-            if (node.right != null) {
-                stack.add(node.right);
-            }
-
-            if (node.left != null) {
-                stack.add(node.left);
-            }
-        }
-
-        return arr;
-    }
-
-    public List<Integer> preorderTraversal(TreeNode root) {
-        LinkedList<TreeNode> stack = new LinkedList<>();
-        LinkedList<Integer> output = new LinkedList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        ArrayList<Integer> output = new ArrayList<>();
         if (root == null) {
             return output;
         }
-
-        stack.add(root);
+        stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode node = stack.pollLast();
+            TreeNode node = stack.pop();
             output.add(node.val);
             if (node.right != null) {
-                stack.add(node.right);
+                stack.push(node.right);
             }
+
             if (node.left != null) {
-                stack.add(node.left);
+                stack.push(node.left);
             }
         }
         return output;
